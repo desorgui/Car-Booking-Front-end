@@ -1,34 +1,10 @@
-const AddVehicles = () => {
-  // const [vehicle, setVehicle] = useState({
-  //   make: "",
-  //   model: "",
-  //   year: "",
-  //   color: "",
-  //   price: "",
-  // });
-
-  // const { make, model, year, color, price } = vehicle;
-
-  // const onChange = (e) =>
-  //   setVehicle({ ...vehicle, [e.target.name]: e.target.value });
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(vehicle);
-  // };
-
-  const handlechange = (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
-  };
-
-  return (
-    <section class="py-3 w-full">
+const NewReservation = () => {
+  <section class="py-3 w-full">
   <div class="container w-full px-4 mx-auto">
     <div class="p-8 rounded-xl">
       <div class="flex flex-wrap items-center justify-between -mx-4 mb-8 pb-6 border-b border-gray-400 border-opacity-20">
         <div class="w-full sm:w-auto px-4 mb-6 sm:mb-0">
-          <h4 class="text-2xl font-bold tracking-wide text-gray-900 mb-1">Car Info</h4>
+          <h4 class="text-2xl font-bold tracking-wide text-gray-900 mb-1">Reserve a car</h4>
           <p class="text-sm text-gray-900">Lorem ipsum dolor sit amet</p>
         </div>
         <div class="w-full sm:w-auto px-4">
@@ -134,45 +110,6 @@ const AddVehicles = () => {
     </div>
   </div>
 </section>
-    // <form onSubmit={onSubmit}>
-    //   <input
-    //     type="text"
-    //     placeholder="Make"
-    //     name="make"
-    //     value={make}
-    //     onChange={onChange}
-    //   />
-    //   <input
-    //     type="text"
-    //     placeholder="Model"
-    //     name="model"
-    //     value={model}
-    //     onChange={onChange}
-    //   />
-    //   <input
-    //     type="text"
-    //     placeholder="Year"
-    //     name="year"
-    //     value={year}
-    //     onChange={onChange}
-    //   />
-    //   <input
-    //     type="text"
-    //     placeholder="Color"
-    //     name="color"
-    //     value={color}
-    //     onChange={onChange}
-    //   />
-    //   <input
-    //     type="text"
-    //     placeholder="Price"
-    //     name="price"
-    //     value={price}
-    //     onChange={onChange}
-    //   />
-    //   <input type="submit" value="Add Vehicle" className="btn btn-primary btn-block" />
-    // </form>
-  );
-};
+}
 
-export default AddVehicles;
+export default NewReservation;
