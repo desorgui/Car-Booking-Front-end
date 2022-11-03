@@ -1,0 +1,29 @@
+[
+  {
+  "id": "1",
+  "name": "Jeep Wrangler",
+  "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009",
+  "image": "jeep1",
+  "reserved": false,
+  "price_per_day": 150,
+  "color": "ff0000"
+  },
+  {
+  "id": "2",
+  "name": "Jeep 4 X 4",
+  "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009",
+  "image": "jeep2",
+  "reserved": false,
+  "price_per_day": 100,
+  "color": "ff0000"
+  },
+  {
+  "id": "3",
+  "name": "Jeep Wrangler",
+  "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009",
+  "image": "jeep3",
+  "reserved": false,
+  "price_per_day": 120,
+  "color": "ff0000"
+  }
+]
