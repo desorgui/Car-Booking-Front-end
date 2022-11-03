@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
   return (
     <li class="group py-3 sm:py-4">
-                    <div class="flex items-center space-x-4">
+                    <div class="flex flex-col sm:flex-row items-center space-x-4">
                         <div class="flex-shrink-0">
                             <img class="w-36" src={vehicle.image} alt="Neil" />
                         </div>
