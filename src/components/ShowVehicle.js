@@ -1,6 +1,5 @@
 import React from "react";
-import jeep1 from "../images/jeep1.png";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 const ShowVehicle = () => {
@@ -16,7 +15,7 @@ const ShowVehicle = () => {
 				<section className="h-fit flex-col grow gap-8 mt-16 sm:flex sm:flex-row sm:gap-4 sm:h-full sm:mt-24 sm:mx-2 md:gap-8 md:mx-4 lg:flex-col lg:mx-0 lg:mt-24">
 					<picture className="relative flex items-center bg-orange sm:bg-transparent">
             <img
-							src={jeep1}
+							src={vehicle.image}
 							alt="sneaker" className="block sm:rounded-xl xl:w-[70%] xl:rounded-xl m-auto pointer-events-none transition duration-300 lg:w-3/4 lg:pointer-events-auto lg:cursor-pointer" id="hero"
 						/>
 					</picture>
@@ -98,8 +97,10 @@ const ShowVehicle = () => {
 					</div>
 
 					<div  className="flex flex-col gap-5 mb-16 sm:flex-row lg:mb-0">
-            <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Reserve</button>
-					</div>
+            <Link to="/reserve">
+              <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Reserve</button>
+            </Link>
+          </div>
 				</section>
 			</main>
 		</div>

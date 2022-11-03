@@ -1,18 +1,18 @@
 [
   {
   "id": "1",
-  "name": "Jeep Wrangler",
-  "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009",
-  "image": "jeep1",
+  "name": "WWII Jeep",
+  "description": "The Ford GPW (commonly known as a Jeep or jeep, formally as the U.S. Army Truck, 1/4 ton, 4x4), and its Willys MB counterpart, are four-wheel drive utility vehicles that were manufactured during World War II",
+  "image": "https://uniim1.shutterfly.com/render/00-YO5mgCtHdv_-CmZnVxwW0qXVRciPhiReEVp0gMAtuk-lfiZLVnUqR6Xz4_ocI6VNKwg5ydwHipy3aIZBf9dNYQ?cn=THISLIFE&res=small&ts=1667503377",
   "reserved": false,
   "price_per_day": 150,
   "color": "ff0000"
   },
   {
   "id": "2",
-  "name": "Jeep 4 X 4",
-  "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009",
-  "image": "jeep2",
+  "name": "Jeep Magneto",
+  "description": "Arriving as our first taste of what Jeep's future might look like, the Magneto concept is an entirely electric off-roader complete with a six-speed manual gearbox.",
+  "image": "https://uniim1.shutterfly.com/render/00-YO5mgCtHdv_-CmZnVxwW0qXVRciPhiReEVp0gMAtuk_EIhnuixG9GMU3d_jPCFhhV7ntXQOewWgszVPDOQPWWw?cn=THISLIFE&res=small&ts=1667503373",
   "reserved": false,
   "price_per_day": 100,
   "color": "ff0000"
@@ -20,8 +20,8 @@
   {
   "id": "3",
   "name": "Jeep Wrangler",
-  "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009",
-  "image": "jeep3",
+  "description": "The Jeep Wrangler is a series of compact and mid-size four-wheel drive off-road SUVs manufactured by Jeep since 1986, and currently in its fourth generation. The Wrangler JL, the most recent generation, was unveiled in late 2017 and is produced at Jeep's Toledo Complex.",
+  "image": "https://uniim1.shutterfly.com/render/00-YO5mgCtHdv_-CmZnVxwW0qXVRciPhiReEVp0gMAtuk-_GejM3GSlqzqi2nBLhkeNldMTLfbtJ__wYVBQ_4iTow?cn=THISLIFE&res=small&ts=1667503376",
   "reserved": false,
   "price_per_day": 120,
   "color": "ff0000"

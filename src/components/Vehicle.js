@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import jeep1 from "../images/jeep1.png";
 
 const Vehicle = ({ vehicle }) => {
-  const [bgColor, setBgColor] = useState({});
 
   const { name, description, image, color } = vehicle;
 
-  // useEffect(() => {
-  //   setBgColor(color);
-  // }, [color]);
-
-  // setBgColor(color)
-  // const colora = '#ff0000'
   return (  
       <div className="w-full h-fit max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
           <div className="flex flex-col items-center pb-10 relative p-1">
-            <div className="bg-opacity-20 rounded-full w-52 h-28" style={{backgroundColor: `${bgColor}`}}>
-              <img className="mb-3 w-52 h-28" src={jeep1} alt="Jeep" />
+            <div className="bg-opacity-20 rounded-full w-52 h-28" style={{backgroundColor: `${color}`}}>
+              <img className="mb-3 w-52 h-28" src={image} alt="Jeep" />
             </div>
               <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{name}</h5>
               <span className="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>

@@ -12,7 +12,7 @@ const Notification = ({ message }) => {
               </svg>
             </span>
             <div className="ml-2">
-              <h5 className="text-gray-100 font-semibold">Notifications success!</h5>
+              <h5 className="text-gray-100 font-semibold"> success!</h5>
               <span className="text-xs font-medium text-gray-300">Lorem ipsum dolor sit amet.</span>
             </div>
           </div>
@@ -28,3 +28,5 @@ const Notification = ({ message }) => {
     </div>
   );
 };
+
+export default Notification;

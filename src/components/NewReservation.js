@@ -88,15 +88,6 @@ const NewReservation = () => {
             </div>
           </div>
         </div>
-        {/* <div className="flex flex-wrap items-start -mx-4 pb-8 mb-8 border-b border-gray-400 border-opacity-20">
-          <div className="w-full sm:w-1/3 px-4 mb-5 sm:mb-0">
-            <span className="block mt-2 text-sm font-medium text-gray-900">Description</span>
-            <span className="text-xs text-gray-400">Lorem ipsum dolor sit amet</span>
-          </div>
-          <div className="w-full sm:w-2/3 px-4">
-            <div className="max-w-xl"><textarea className="block h-48 py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-white focus:border-green-500 rounded-lg resize-none" id="formInput1-9" type="text" placeholder="Lorem ipsum dolor sit amet"></textarea></div>
-          </div>
-        </div> */}
       </form>
     </div>
   </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import jeep1 from '../images/jeep1.png';
 
  const ReservationItem = ({ reservation }) => {
   const { id, user_id, vehicle_id, reservation_date, return_date } = reservation;
@@ -12,14 +11,14 @@ import jeep1 from '../images/jeep1.png';
     <li class="group py-3 sm:py-4">
                     <div class="flex items-center space-x-4">
                         <div class="flex-shrink-0">
-                            <img class="w-36" src={jeep1} alt="Neil" />
+                            <img class="w-36" src={vehicle.image} alt="Neil" />
                         </div>
                         <div class="flex-1 min-w-0">
                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                                 {vehicle.name}
                             </p>
                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                {duration} days
+                                Reserved for <strong>{duration} days</strong>
                             </p>
                         </div>
                         <div class="flex flex-col justify-between items-center text-base font-semibold text-gray-900 dark:text-white">
