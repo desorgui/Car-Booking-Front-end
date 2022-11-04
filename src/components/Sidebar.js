@@ -54,8 +54,8 @@ const Sidebar = () => {
         <div className="lg:hidden navbar-backdrop top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
         <nav className="relative top-0 left-0 bottom-0 w-full max-w-xxs flex flex-col h-full py-8 px-4 bg-white overflow-auto">
           <div className="mb-6">
-            <a className="inline-block mb-12" href="#">
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none light:text-White md:text-5xl lg:text-6xl dark:text-white">Jeep</h1>
+            <a className="inline-block mb-12 ml-1/4" href="#">
+            <h1 className="mb-4 font-bold tracking-tight leading-none light:text-White text-5xl dark:text-white">Jeep</h1>
               {/* <img className="h-7" src="trizzle-assets/logos/trizzle-logo.svg" alt="" /> */}
             </a>
             <ul>

@@ -65,9 +65,9 @@ const AddVehicles = () => {
                   </svg>
                 </span>
                 <select className="w-full py-4 text-gray-900 placeholder-gray-300 appearance-none bg-transparent outline-none" id="formInput1-7" name="">
-                  <option className="bg-gray-500" value="Wrangler">Wrangler</option>
-                  <option className="bg-gray-500" value="4 X 4">4 X 4</option>
-                  <option className="bg-gray-500" value="Wrangler">Wrangler</option>
+                  <option className="bg-gray-50" value="Wrangler">Wrangler</option>
+                  <option className="bg-gray-50" value="4 X 4">4 X 4</option>
+                  <option className="bg-gray-50" value="Wrangler">Wrangler</option>
                 </select>
               </div>
             </div>

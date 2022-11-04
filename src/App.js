@@ -16,6 +16,7 @@ import Vehicles from './components/Vehicles';
 import NewReservation from './components/NewReservation';
 import MyReservations from './components/MyReservations';
 import Login from './components/Login';
+import Registration from './components/Registration';
 import { Outlet } from 'react-router-dom';
 
 const SidebarLayout = () => (
@@ -50,6 +51,7 @@ function App() {
             <Route path="*" element={<h1>404</h1>} />
           </Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
         </Routes>
       {/* </main> */}
     </Router>
