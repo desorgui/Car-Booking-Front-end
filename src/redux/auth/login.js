@@ -1,30 +1,18 @@
-const Login = async (event) => {
-  event.preventDefault();
-  const url = 'loginData.json';
-  const response = await fetch(url, {
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
+export const login = createAsyncThunk('LOGIN', async (userinfo) => {
+  const response = await fetch('http://localhost:3000/api/v1/auth/login', {
     method: 'POST',
-    body: JSON.stringify({
-      user: {
-        email: user.user.email,
-        password: user.user.password,
-      },
-    }),
     headers: {
-      'Content-Type': 'application/json',
+      'content-type': 'application/json',
+      accept: 'application/json',
     },
+    body: JSON.stringify(userinfo),
   });
-
-  const data = await response.json();
-
-  const userInfo = {
-    ...data.data,
-    token: response.headers.get('Authorization'),
-  };
-  if (response.status === 200) {
-    setAuth(localStorage.setItem('isAuth', true));
-    localStorage.setItem('userInfo', JSON.stringify(userInfo));
-    window.location.href = '/';
+  console.log(response);
+  const user = await response.json();
+  if (response.ok) {
+    localStorage.setItem('user',JSON.stringify(user));
   }
-
-  return data;
-};
+  return user;
+});

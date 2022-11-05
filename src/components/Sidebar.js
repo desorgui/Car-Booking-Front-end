@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar, faListCheck, faTrashAlt, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -27,10 +27,17 @@ const Sidebar = () => {
     },
     {
       name: 'Delete vehicles',
-      href: '/delete_vehicle',
+      href: '/delete_vehicles',
       icon: faTrashAlt
     },
   ]
+  
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem('user');
+    navigate('/login');
+  };
+
   return (
     <div className="h-full lg:w-60">
       <nav className="lg:hidden absolute left-0 flex items-center justify-between p-4 mb-3">
@@ -72,7 +79,7 @@ const Sidebar = () => {
             </ul>
           </div>
           <div className="mt-8">
-            <NavLink className="flex items-center p-4 text-gray-900 hover:bg-gray-300" to="/login">
+            <div className="flex items-center p-4 text-gray-900 hover:bg-gray-300 cursor-pointer" onClick={logout}>
               <span className="text-gray-400">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.8333 7.33335V5.50002C12.8333 5.01379 12.6402 4.54747 12.2964 4.20366C11.9525 3.85984 11.4862 3.66669 11 3.66669H4.58333C4.0971 3.66669 3.63079 3.85984 3.28697 4.20366C2.94315 4.54747 2.75 5.01379 2.75 5.50002V16.5C2.75 16.9863 2.94315 17.4526 3.28697 17.7964C3.63079 18.1402 4.0971 18.3334 4.58333 18.3334H11C11.4862 18.3334 11.9525 18.1402 12.2964 17.7964C12.6402 17.4526 12.8333 16.9863 12.8333 16.5V14.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -80,7 +87,7 @@ const Sidebar = () => {
                 </svg>
               </span>
               <span className="ml-4 text-sm font-semibold">Log Out</span>
-            </NavLink>
+            </div>
           </div>
         </nav>
       </div>

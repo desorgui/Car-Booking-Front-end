@@ -11,7 +11,6 @@ export const getReservations = createAsyncThunk(
     const response = await fetch('reservationsData.json');
     const initValues = await response.json();
     initValues.forEach((reservation) => {
-        const {} = reservation
         reservationArr.push({
           id: reservation.id,
           user_id: reservation.user_id,
