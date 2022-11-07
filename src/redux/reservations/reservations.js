@@ -8,7 +8,15 @@ export const getReservations = createAsyncThunk(
   FETCHED_RESERVATION,
   async () => {
     const reservationArr = [];
-    const response = await fetch('reservationsData.json');
+    const user = JSON.parse(localStorage.getItem('user'));
+    const response = await fetch('http://localhost:3000/api/v1/reservations', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        accept: 'application/json',
+        Authorization: user.token,
+      },
+    });
     const initValues = await response.json();
     initValues.forEach((reservation) => {
         reservationArr.push({

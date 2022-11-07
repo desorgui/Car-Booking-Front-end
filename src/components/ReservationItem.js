@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
     <li class="group py-3 sm:py-4">
                     <div class="flex flex-col sm:flex-row items-center space-x-4">
                         <div class="flex-shrink-0">
-                            <img class="w-36" src={vehicle.image} alt="Neil" />
+                            <img class="w-36" src={vehicle.image} alt="Vehicle" />
                         </div>
                         <div class="flex-1 min-w-0">
                             <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
