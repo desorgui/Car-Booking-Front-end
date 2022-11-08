@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Sidebar from './components/Sidebar';
-import ShowVehicle from './components/ShowVehicle';
-import { getVehicles } from './redux/vehicles/vehicles';
-import { getReservations } from './redux/reservations/reservations';
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,12 +9,18 @@ import {
   useLocation
 } from "react-router-dom";
 // import PopupSuccess from './components/PopupSuccess';
-import AddVehicles from './components/AddVehicles';
-import Vehicles from './components/Vehicles';
-import NewReservation from './components/NewReservation';
-import MyReservations from './components/MyReservations';
+import Sidebar from './components/Sidebar';
+import ShowVehicle from './components/vehicle/ShowVehicle';
+import { getVehicles } from './redux/vehicles/vehicles';
+import { getReservations } from './redux/reservations/reservations';
+import AddVehicles from './components/vehicle/AddVehicles';
+import Vehicles from './components/vehicle/Vehicles';
+import DeleteVehicles from './components/vehicle/DeleteVehicles';
+import NewReservation from './components/reservation/NewReservation';
+import MyReservations from './components/reservation/MyReservations';
 import Login from './components/Login';
 import Registration from './components/Registration';
+import Splash from './components/Splash'
 
 const SidebarLayout = () => (
   <main className="flex">
@@ -101,11 +103,12 @@ function App() {
             <Route path="my_reservations" element={<MyReservations />} />
             <Route element={<AdminRoutes />}>
               <Route path="/new_vehicle" element={<AddVehicles />} />
-              <Route path="/delete_vehicles" element={<h1>Delete Vehicles</h1>} />
+              <Route path="/delete_vehicles" element={<DeleteVehicles />} />
             </Route>
             </Route>
           </Route>
           <Route path="*" element={<h1>404</h1>} />
+          <Route path="/" element={<Splash />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
         </Routes>

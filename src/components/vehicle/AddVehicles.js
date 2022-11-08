@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addVehicle } from '../redux/vehicles/vehicles';
+import { addVehicle } from '../../redux/vehicles/vehicles';
 import { useDispatch } from 'react-redux';
 
 const AddVehicles = () => {
