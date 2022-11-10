@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Vehicle from './Vehicle';
-import { Link } from 'react-router-dom';
 
 const Vehicles = () => {
   const vehicles = useSelector((state) => state.vehicles);
@@ -15,9 +14,7 @@ const Vehicles = () => {
       </div>
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
       {vehicles.map((vehicle) => (
-        <Link to={'/vehicles/'+vehicle.id} key={vehicle.id}>
-          <Vehicle key={vehicle.id} vehicle={vehicle} />
-        </Link>
+        <Vehicle key={vehicle.id} vehicle={vehicle} />
       ))}
     </div>
     </div>

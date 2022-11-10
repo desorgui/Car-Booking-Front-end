@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Routes,
@@ -72,21 +72,16 @@ const LoggedInRoutes = () => {
       return <Navigate to="/login" replace state={{ from: location }} />
     }
   }
-//   const isLoggedIn = user && (new Date(user.exp) < new Date());
-//   console.log(new Date(user.exp));
-//   return isLoggedIn ? (
-//     <Outlet />
-//   ) : (
-//     <Navigate to="/login" replace state={{ from: location }} />
-//   );
-// };
 
 function App() {
   const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.user);
   useEffect(() => {
+    if (token){
     dispatch(getVehicles());
     dispatch(getReservations());
-  }, [dispatch]);
+  }
+  }, [dispatch, token]);
 
   // if (Date.new('2021-08-01') < new Date.now()) {
 

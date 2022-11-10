@@ -1,19 +1,24 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Vehicle = ({ vehicle }) => {
 
-  const { name, description, image, color } = vehicle;
+  const { id, name, model, description, image, color } = vehicle;
 
   return (  
       <div className="w-full h-fit max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
           <div className="flex flex-col items-center pb-10 relative p-1">
             <div className="bg-opacity-20 rounded-full w-52 h-28" style={{backgroundColor: `${color}`}}>
-              <img className="mb-3 w-52 h-28" src={image} alt="Jeep" />
+              <Link to={'/vehicles/'+id} >
+                <img className="mb-3 w-52 h-28" src={image} alt="Jeep" />
+              </Link>
             </div>
-              <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{name}</h5>
-              <span className="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
+              <Link to={'/vehicles/'+id} >
+                <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{name}</h5>
+              </Link>
+              <span className="text-sm text-gray-500 dark:text-gray-400">{model}</span>
               <div className="flex mt-4 space-x-3 md:mt-6">
                 <p className="text-center text-xs line-clamp-2">
                   {description}

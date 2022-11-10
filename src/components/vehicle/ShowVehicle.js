@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const ShowVehicle = () => {
 
   const { id } = useParams();
-	 const vehicle = useSelector((state) => state.vehicles.find((vehicle) => JSON.stringify(vehicle.id) === JSON.stringify(id)));
+	 const vehicle = useSelector((state) => state.vehicles.find((vehicle) => vehicle.id == id));
 
   return (
    <>
@@ -21,8 +21,8 @@ const ShowVehicle = () => {
 					</picture>
 				</section>
 				<section className="w-full lg:w-1/4 p-6 lg:mt-24 lg:py-10 2xl:mt-40">
-          <h1 className="text-very-dark mb-4 font-bold text-3xl lg:text-4xl">
-						{vehicle.name}
+          <h1 className="text-very-dark mb-4 font-bold text-xl lg:text-2xl">
+						{vehicle.name} - {vehicle.model}
 					</h1>
           <p className="text-orange mb-2 text-xs">
 						A $5000.00 Deposit is required to reserve this vehicle
@@ -97,7 +97,7 @@ const ShowVehicle = () => {
 					</div>
 
 					<div  className="flex flex-col gap-5 mb-16 sm:flex-row lg:mb-0">
-            <Link to="/reserve">
+            <Link to={'/reserve?vehicle_id='+id}>
               <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Reserve</button>
             </Link>
           </div>

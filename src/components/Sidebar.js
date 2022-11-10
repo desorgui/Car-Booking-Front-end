@@ -32,7 +32,7 @@ const Sidebar = () => {
     },
   ]
   
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   const logout = () => {
     localStorage.removeItem('user');
     navigate('/login');
@@ -40,7 +40,7 @@ const Sidebar = () => {
 
   return (
     <div className="h-full lg:w-60">
-      <nav className="lg:hidden absolute left-0 flex items-center justify-between p-4 mb-3">
+      <nav className="lg:left-10 absolute left-0 flex items-center justify-between p-4 mb-3">
         <div className="w-full h-full xl:w-auto px-2 xl:mr-12">
           <div className="flex items-center justify-between">
             <a className="inline-flex items-center h-8" href="#">
@@ -57,8 +57,8 @@ const Sidebar = () => {
           </div>
         </div>
       </nav>
-      <div className="hidden lg:block navbar-menu relative z-50 h-full">
-        <div className="lg:hidden navbar-backdrop top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
+      <div className="lg:block navbar-menu relative z-50 h-full">
+        <div className="hidden navbar-backdrop top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
         <nav className="relative top-0 left-0 bottom-0 w-full max-w-xxs flex flex-col h-full py-8 px-4 bg-white overflow-auto">
           <div className="mb-6">
             <a className="inline-block mb-12 ml-1/4" href="#">
