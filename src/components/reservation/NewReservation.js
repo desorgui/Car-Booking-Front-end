@@ -33,6 +33,7 @@ const NewReservation = () => {
       name="vehicle"
       className="w-full py-4 text-gray-900 placeholder-gray-300 appearance-none bg-transparent outline-none"
       id="formInput1-7"
+      required
       value={selectedOption}
       onChange={(e) => setSelectedOption(e.target.value)}
     >
@@ -88,7 +89,7 @@ const NewReservation = () => {
                 <div className="max-w-xl">
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="w-full sm:w-1-full px-3 mb-3 sm:mb-0">
-                      <input onChange={(e) => setCity(e.target.value)} value={city} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" />
+                      <input required onChange={(e) => setCity(e.target.value)} value={city} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" />
                     </div>
                   </div>
                 </div>
@@ -102,7 +103,7 @@ const NewReservation = () => {
                 <div className="max-w-xl">
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="w-full sm:w-1-full px-3 mb-3 sm:mb-0">
-                      <input onChange={(e) => setReservation_date(e.target.value)} value={reservation_date} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="date" placeholder="YYYY/MM/DD" />
+                      <input required onChange={(e) => setReservation_date(e.target.value)} value={reservation_date} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="date" placeholder="YYYY/MM/DD" />
                     </div>
                   </div>
                 </div>
@@ -116,7 +117,7 @@ const NewReservation = () => {
                 <div className="max-w-xl">
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="w-full sm:w-1-full px-3 mb-3 sm:mb-0">
-                      <input onChange={(e) => setReturn_date(e.target.value)} value={return_date} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="date" placeholder="YYYY/MM/DD" />
+                      <input required onChange={(e) => setReturn_date(e.target.value)} value={return_date} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="date" placeholder="YYYY/MM/DD" />
                     </div>
                   </div>
                 </div>

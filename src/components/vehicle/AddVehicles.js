@@ -86,7 +86,7 @@ const AddVehicles = () => {
                 <div className="max-w-xl">
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="w-full sm:w-1-full px-3 mb-3 sm:mb-0">
-                      <input name="model" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" value={model} />
+                      <input required name="model" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" value={model} />
                     </div>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ const AddVehicles = () => {
                 <div className="max-w-xl">
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="w-full sm:w-1-full px-3 mb-3 sm:mb-0">
-                      <input name="pict" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" value={pict} />
+                      <input required name="pict" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" value={pict} />
                     </div>
                   </div>
                 </div>
@@ -139,7 +139,7 @@ const AddVehicles = () => {
               </div>
               <div className="w-full sm:w-2/3 px-4">
                 <div className="max-w-xl">
-                  <input id="colorInput" name="color" value={color} onChange={handleChange} className="block py-1 px-3 w-44 h-12 outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" type="color" placeholder="Select car color" />
+                  <input required id="colorInput" name="color" value={color} onChange={handleChange} className="block py-1 px-3 w-44 h-12 outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" type="color" placeholder="Select car color" />
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ const AddVehicles = () => {
                 <div className="max-w-xl">
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="w-full sm:w-1-full px-3 mb-3 sm:mb-0">
-                      <input name="price_per_day" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" value={price_per_day} />
+                      <input required name="price_per_day" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" value={price_per_day} />
                     </div>
                   </div>
                 </div>

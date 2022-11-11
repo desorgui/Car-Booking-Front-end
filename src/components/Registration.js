@@ -10,7 +10,6 @@ const Registration = () => {
   const [username, setUser_name] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [password_confirmation, setPasswordConfirmation] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,23 +34,19 @@ const Registration = () => {
             <form onSubmit={(e) => handleSubmit(e)} className="md:max-w-lg mx-auto">
               <label htmlFor="signInInput1-1" className="block mb-4">
                 <p className="mb-2 text-gray-900 font-semibold leading-normal">Name *</p>
-                <input onChange={(e) => setName(e.target.value)} value={name} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-1" type="text" placeholder="Enter Name" />
+                <input required onChange={(e) => setName(e.target.value)} value={name} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-1" type="text" placeholder="Enter Name" />
               </label>
               <label htmlFor="signInInput1-2" className="block mb-4">
                 <p className="mb-2 text-gray-900 font-semibold leading-normal">Username *</p>
-                <input onChange={(e) => setUser_name(e.target.value)} value={username} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-2" type="text" placeholder="Enter Username" />
+                <input required onChange={(e) => setUser_name(e.target.value)} value={username} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-2" type="text" placeholder="Enter Username" />
               </label>
               <label htmlFor="signInInput1-3" className="block mb-4">
                 <p className="mb-2 text-gray-900 font-semibold leading-normal">Email Address *</p>
-                <input onChange={(e) => setEmail(e.target.value)} value={email} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-3" type="text" name="email" placeholder="Enter email address" />
+                <input required onChange={(e) => setEmail(e.target.value)} value={email} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-3" type="text" name="email" placeholder="Enter email address" />
               </label>
               <label htmlFor="signInInput1-4" className="block mb-4">
                 <p className="mb-2 text-gray-900 font-semibold leading-normal">Password *</p>
-                <input onChange={(e) => setPassword(e.target.value)} value={password} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-4" type="password" placeholder="Enter Password" />
-              </label>
-              <label htmlFor="signInInput1-5" className="block mb-4">
-                <p className="mb-2 text-gray-900 font-semibold leading-normal">Confirm Password *</p>
-                <input onChange={(e) => setPasswordConfirmation(e.target.value)} value={password_confirmation} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-5" type="password" placeholder="Confim Password" />
+                <input required onChange={(e) => setPassword(e.target.value)} value={password} className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" id="signInInput1-4" type="password" placeholder="Enter Password" />
               </label>
               <div className="flex flex-wrap justify-between -m-2 mb-4">
                 <div className="w-auto p-2" />
