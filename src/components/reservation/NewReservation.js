@@ -27,7 +27,7 @@ const NewReservation = () => {
       vehicle_id: selectedOption,
     };
     dispatch(addReservation(reservationInfo));
-    navigate('/my-reservations');
+    navigate('/my_reservations');
   };
 
   const dropdown = (vehicles) => (
