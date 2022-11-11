@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { addReservation } from '../../redux/reservations/reservations';
 
 const NewReservation = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const id_vehicle = new URLSearchParams(location.search).get('vehicle_id');
   const vehicles = useSelector((state) => state.vehicles);
   const [selectedOption, setSelectedOption] = useState(id_vehicle);
@@ -26,6 +27,7 @@ const NewReservation = () => {
       vehicle_id: selectedOption,
     };
     dispatch(addReservation(reservationInfo));
+    navigate('/my-reservations');
   };
 
   const dropdown = (vehicles) => (

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addVehicle } from '../../redux/vehicles/vehicles';
 
 const AddVehicles = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const options = ['Wrangler', 'Compass', 'Cherokee', 'Grand Cherokee', 'Renegade', 'Gladiator'];
   const [vehicle, setVehicle] = useState({
     name: options[0],
@@ -34,6 +36,7 @@ const AddVehicles = () => {
     data.append('description', description);
     data.append('color', color);
     dispatch(addVehicle(data));
+    navigate('/vehicles');
   };
 
   const dropdown = (options) => (
