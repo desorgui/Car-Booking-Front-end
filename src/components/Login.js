@@ -43,11 +43,11 @@ const Login = () => {
             <form className="md:max-w-lg mx-auto" onSubmit={(e) => handleSubmit(e)}>
               <label htmlFor="signInInput-1" className="block mb-4">
                 <p className="mb-2 text-gray-900 font-semibold leading-normal">Username *</p>
-                <input className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" onChange={(e) => setUser_name(e.target.value)} value={username} id="signInInput1-1" type="text" placeholder="Enter username" />
+                <input required className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" onChange={(e) => setUser_name(e.target.value)} value={username} id="signInInput1-1" type="text" placeholder="Enter username" />
               </label>
               <label htmlFor="signInInput1-" className="block mb-5">
                 <p className="mb-2 text-gray-900 font-semibold leading-normal">Password *</p>
-                <input className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" onChange={(e) => setPassword(e.target.value)} value={password} id="signInInput1-2" type="password" placeholder="********" />
+                <input required className="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300" onChange={(e) => setPassword(e.target.value)} value={password} id="signInInput1-2" type="password" placeholder="********" />
               </label>
               <div className="flex flex-wrap justify-between -m-2 mb-4">
                 <div className="w-auto p-2" />
