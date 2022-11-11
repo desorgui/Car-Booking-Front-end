@@ -37,8 +37,7 @@ const Login = () => {
     <section className="relative bg-white overflow-hidden">
       <img className="absolute left-0 top-0" src="flaro-assets/images/sign-in/gradient.svg" alt="" />
       <div className="relative z-10 flex flex-wrap -m-8">
-        <div className="w-full md:w-1/2 hidden md:block p-8 bg-no-repeat " style={{backgroundImage: `url(${fetchedImgSrc})`, backgroundSize: "100% 100%", }}>
-        </div>
+        <div className="w-full md:w-1/2 hidden md:block p-8 bg-no-repeat " style={{backgroundImage: `url(${fetchedImgSrc})`, backgroundSize: "100% 100%", }} />
         <div className="w-full md:w-1/2 p-8">
           <div className="p-4 py-16 flex flex-col justify-center bg-blueGray-100 h-full">
             <form className="md:max-w-lg mx-auto" onSubmit={(e) => handleSubmit(e)}>
@@ -54,7 +53,7 @@ const Login = () => {
                 <div className="w-auto p-2">
                   <div className="flex items-center">
                     <input className="w-4 h-4" id="default-checkbox" type="checkbox" value="" />
-                    <label className="ml-2 text-sm text-gray-900 font-medium" for="default-checkbox">Remember Me</label>
+                    <label className="ml-2 text-sm text-gray-900 font-medium" htmlFor="default-checkbox">Remember Me</label>
                   </div>
                 </div>
                 <div className="w-auto p-2"><a className="text-sm text-indigo-600 hover:text-indigo-700 font-medium" href="#">Forgot Password?</a></div>

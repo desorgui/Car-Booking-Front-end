@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { addVehicle, testVehicles } from '../redux/vehicles/vehicles';
+import { addVehicle } from '../../redux/vehicles/vehicles';
+import { useDispatch } from 'react-redux';
 
 const AddVehicles = () => {
+  const dispatch = useDispatch();
+
   const [vehicle, setVehicle] = useState({
     name: "Jeep",
     model: "",
@@ -11,20 +14,28 @@ const AddVehicles = () => {
     color: "#000000",
   });
 
-  const { name, model, price_per_day, picture, description, color } = vehicle;
+  const { name, price_per_day, picture, description, color } = vehicle;
 
   const handleChange = (e) => setVehicle({ ...vehicle, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addVehicle(vehicle);
-    testVehicles()
-    console.log(vehicle);
-  };
 
   const options = [ 'Wrangler', 'Compass', 'Cherokee', 'Grand Cherokee', 'Renegade', 'Gladiator' ];
   
   const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData();
+
+    data.append('name', name);
+    data.append('model', selectedOption);
+    data.append('price_per_day', price_per_day);
+    data.append('picture', e.target.picture.files[0]);
+    data.append('description', description);
+    data.append('color', color);
+
+    dispatch(addVehicle(data));
+    console.log(data);
+  };
 
   const dropdown = (options) => {
     return (
@@ -105,7 +116,7 @@ const AddVehicles = () => {
                       <path d="M6.71 5.71002L9 3.41002V13C9 13.2652 9.10536 13.5196 9.29289 13.7071C9.48043 13.8947 9.73478 14 10 14C10.2652 14 10.5196 13.8947 10.7071 13.7071C10.8946 13.5196 11 13.2652 11 13V3.41002L13.29 5.71002C13.383 5.80375 13.4936 5.87814 13.6154 5.92891C13.7373 5.97968 13.868 6.00582 14 6.00582C14.132 6.00582 14.2627 5.97968 14.3846 5.92891C14.5064 5.87814 14.617 5.80375 14.71 5.71002C14.8037 5.61706 14.8781 5.50645 14.9289 5.3846C14.9797 5.26274 15.0058 5.13203 15.0058 5.00002C15.0058 4.86801 14.9797 4.7373 14.9289 4.61544C14.8781 4.49358 14.8037 4.38298 14.71 4.29002L10.71 0.290018C10.6149 0.198978 10.5028 0.127613 10.38 0.0800184C10.1365 -0.0199996 9.86346 -0.0199996 9.62 0.0800184C9.49725 0.127613 9.3851 0.198978 9.29 0.290018L5.29 4.29002C5.19676 4.38326 5.1228 4.49395 5.07234 4.61577C5.02188 4.73759 4.99591 4.86816 4.99591 5.00002C4.99591 5.13188 5.02188 5.26245 5.07234 5.38427C5.1228 5.50609 5.19676 5.61678 5.29 5.71002C5.38324 5.80326 5.49393 5.87722 5.61575 5.92768C5.73757 5.97814 5.86814 6.00411 6 6.00411C6.13186 6.00411 6.26243 5.97814 6.38425 5.92768C6.50607 5.87722 6.61676 5.80326 6.71 5.71002ZM19 10C18.7348 10 18.4804 10.1054 18.2929 10.2929C18.1054 10.4804 18 10.7348 18 11V17C18 17.2652 17.8946 17.5196 17.7071 17.7071C17.5196 17.8947 17.2652 18 17 18H3C2.73478 18 2.48043 17.8947 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V11C2 10.7348 1.89464 10.4804 1.70711 10.2929C1.51957 10.1054 1.26522 10 1 10C0.734784 10 0.48043 10.1054 0.292893 10.2929C0.105357 10.4804 0 10.7348 0 11V17C0 17.7957 0.316071 18.5587 0.87868 19.1213C1.44129 19.6839 2.20435 20 3 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7957 20 17V11C20 10.7348 19.8946 10.4804 19.7071 10.2929C19.5196 10.1054 19.2652 10 19 10Z" fill="#E8EDFF"></path>
                     </svg>
                   </div>
-                  <input name="picture" value={picture} onChange={handleChange} className="absolute top-0 left-0 h-14 w-14 opacity-0" id="formInput1-4" type="file" />
+                  <input name="picture" value={picture} onChange={handleChange} className="absolute top-0 left-0 h-14 w-14 opacity-0" id="picture" type="file" />
                 </div>
                 <p className="font-semibold leading-normal mb-1">
                   <span className="text-blue-500">Click to upload a file</span>
