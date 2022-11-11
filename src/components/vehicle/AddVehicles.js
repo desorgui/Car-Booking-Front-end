@@ -151,7 +151,7 @@ const AddVehicles = () => {
                 <div className="max-w-xl">
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="w-full sm:w-1-full px-3 mb-3 sm:mb-0">
-                      <input required name="price_per_day" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="text" value={price_per_day} />
+                      <input required name="price_per_day" onChange={handleChange} className="block py-4 px-3 w-full text-sm text-gray-900 placeholder-gray-300 font-medium outline-none bg-transparent border border-gray-400 hover:border-gray-300 focus:border-green-500 rounded-lg" id="formInput1-1" type="number" value={price_per_day} />
                     </div>
                   </div>
                 </div>
