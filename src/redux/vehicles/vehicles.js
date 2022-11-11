@@ -18,13 +18,13 @@ export const getVehicles = createAsyncThunk(
       },
     });
     const initValues = await response.json();
-    console.log(initValues);
     initValues.forEach((elem) => {
       vehicleList.push({
         id: elem.id,
         name: elem.name,
         model: elem.model,
         description: elem.description,
+        pict: elem.pict,
         image: elem.picture_url,
         price_per_day: elem.price_per_day,
         color: elem.color,
@@ -47,7 +47,7 @@ export const addVehicle = createAsyncThunk(
     });
     const vehicle = await response.json();
     return vehicle;
-  }
+  },
 );
 
 export const deleteVehicle = createAsyncThunk(
@@ -55,15 +55,15 @@ export const deleteVehicle = createAsyncThunk(
   async (id) => {
     const user = JSON.parse(localStorage.getItem('user'));
     await fetch(`http://localhost:3000/api/v1/vehicles/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'content-type': 'application/json',
-      accept: 'application/json',
-      Authorization: user.token,
-    },
-    })
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        accept: 'application/json',
+        Authorization: user.token,
+      },
+    });
     return id;
-  }
+  },
 );
 
 const vehicleSlice = createSlice({
@@ -72,7 +72,7 @@ const vehicleSlice = createSlice({
   extraReducers: {
     [getVehicles.fulfilled]: (state, action) => action.payload,
     [addVehicle.fulfilled]: (state, action) => ([...state, action.payload]),
-    [deleteVehicle.fulfilled]: (state, action) => (state.filter((elem) => elem.id !== action.payload))
+    [deleteVehicle.fulfilled]: (state, action) => (state.filter((elem) => elem.id !== action.payload)), /* eslint-disable-line */
   },
 });
 export default vehicleSlice.reducer;

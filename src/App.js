@@ -6,8 +6,8 @@ import {
   Route,
   Outlet,
   Navigate,
-  useLocation
-} from "react-router-dom";
+  useLocation,
+} from 'react-router-dom';
 // import PopupSuccess from './components/PopupSuccess';
 import Sidebar from './components/Sidebar';
 import ShowVehicle from './components/vehicle/ShowVehicle';
@@ -20,7 +20,7 @@ import NewReservation from './components/reservation/NewReservation';
 import MyReservations from './components/reservation/MyReservations';
 import Login from './components/Login';
 import Registration from './components/Registration';
-import Splash from './components/Splash'
+import Splash from './components/Splash';
 
 const SidebarLayout = () => (
   <main className="flex">
@@ -57,41 +57,40 @@ const parseJwt = (token) => {
 const LoggedInRoutes = () => {
   const location = useLocation();
   const user = JSON.parse(localStorage.getItem('user'));
-  
+
   if (user) {
     const decodedJwt = parseJwt(user.token);
     const isLoggedIn = user && decodedJwt.exp * 1000 > Date.now();
-     return isLoggedIn ?
-      (
+    return isLoggedIn
+      ? (
         <Outlet />
       ) : (
         <Navigate to="/login" replace state={{ from: location }} />
       );
-    }
-    else {
-      return <Navigate to="/login" replace state={{ from: location }} />
-    }
   }
+
+  return <Navigate to="/login" replace state={{ from: location }} />;
+};
 
 function App() {
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.user);
   useEffect(() => {
-    if (token){
-    dispatch(getVehicles());
-    dispatch(getReservations());
-  }
+    if (token) {
+      dispatch(getVehicles());
+      dispatch(getReservations());
+    }
   }, [dispatch, token]);
 
   // if (Date.new('2021-08-01') < new Date.now()) {
 
   // }
-  
+
   return (
     <Router>
-        <Routes>
-          <Route element={<LoggedInRoutes />}>
-            <Route  element={<SidebarLayout />}>
+      <Routes>
+        <Route element={<LoggedInRoutes />}>
+          <Route element={<SidebarLayout />}>
             <Route path="/vehicles" element={<Vehicles />} />
             <Route path="/vehicles/:id" element={<ShowVehicle />} />
             <Route path="/reserve" element={<NewReservation />} />
@@ -100,13 +99,13 @@ function App() {
               <Route path="/new_vehicle" element={<AddVehicles />} />
               <Route path="/delete_vehicles" element={<DeleteVehicles />} />
             </Route>
-            </Route>
           </Route>
-          <Route path="*" element={<h1>404</h1>} />
-          <Route path="/" element={<Splash />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/registration" element={<Registration />} />
-        </Routes>
+        </Route>
+        <Route path="*" element={<h1>404</h1>} />
+        <Route path="/" element={<Splash />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
+      </Routes>
       {/* </main> */}
     </Router>
   );
