@@ -17,7 +17,7 @@ const Registration = () => {
       name,
       user_name: username,
       password,
-      role: 'admin',
+      role: '',
       email,
       profile_picture: 'profile not exist',
     };
