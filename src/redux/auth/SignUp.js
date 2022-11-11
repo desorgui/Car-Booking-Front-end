@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const signUpUser = createAsyncThunk('SIGN_UP', async (userinfo) => {
-  const response = await fetch('https://jeepbook.herokuapp.com/api/v1/users', {
+  const response = await fetch('http://127.0.0.1:3000/api/v1/users', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -9,9 +9,7 @@ export const signUpUser = createAsyncThunk('SIGN_UP', async (userinfo) => {
     },
     body: JSON.stringify(userinfo),
   });
-  console.log(response);
   const user = await response.json();
-  console.log(user);
   return user;
 });
 

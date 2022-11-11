@@ -1,9 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const GETVEHICLE = 'GET_VEHICLE';
+const GET_VEHICLE = 'GET_VEHICLE';
+const ADD_VEHICLE = 'ADD_VEHICLE';
+const DELETE_VEHICLE = 'DELETE_VEHICLE';
 
 export const getVehicles = createAsyncThunk(
-  GETVEHICLE,
+  GET_VEHICLE,
   async () => {
     const vehicleList = [];
     const user = JSON.parse(localStorage.getItem('user'));
@@ -16,13 +18,13 @@ export const getVehicles = createAsyncThunk(
       },
     });
     const initValues = await response.json();
-    console.log(initValues);
-    initValues.forEach((elem) => {    
+    initValues.forEach((elem) => {
       vehicleList.push({
         id: elem.id,
         name: elem.name,
         model: elem.model,
         description: elem.description,
+        pict: elem.pict,
         image: elem.picture_url,
         price_per_day: elem.price_per_day,
         color: elem.color,
@@ -33,7 +35,7 @@ export const getVehicles = createAsyncThunk(
 );
 
 export const addVehicle = createAsyncThunk(
-  'ADD_VEHICLE',
+  ADD_VEHICLE,
   async (vehicleInfo) => {
     const user = JSON.parse(localStorage.getItem('user'));
     const response = await fetch('http://localhost:3000/api/v1/vehicles', {
@@ -43,19 +45,34 @@ export const addVehicle = createAsyncThunk(
       },
       body: vehicleInfo,
     });
-    console.log(response);
     const vehicle = await response.json();
-    console.log(vehicle);
     return vehicle;
-  }
+  },
 );
 
+export const deleteVehicle = createAsyncThunk(
+  DELETE_VEHICLE,
+  async (id) => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    await fetch(`http://localhost:3000/api/v1/vehicles/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        accept: 'application/json',
+        Authorization: user.token,
+      },
+    });
+    return id;
+  },
+);
 
 const vehicleSlice = createSlice({
   name: 'vehicles',
   initialState: [],
   extraReducers: {
     [getVehicles.fulfilled]: (state, action) => action.payload,
+    [addVehicle.fulfilled]: (state, action) => ([...state, action.payload]),
+    [deleteVehicle.fulfilled]: (state, action) => (state.filter((elem) => elem.id !== action.payload)), /* eslint-disable-line */
   },
 });
 export default vehicleSlice.reducer;
