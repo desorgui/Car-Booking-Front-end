@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const NewReservation = () => {
+  const vehicles = useSelector((state) => state.vehicles);
   return (
   <section className="py-3 w-full">
   <div className="container w-full px-4 mx-auto">
@@ -28,9 +30,10 @@ const NewReservation = () => {
                   </svg>
                 </span>
                 <select className="w-full py-4 text-gray-900 placeholder-gray-300 appearance-none bg-transparent outline-none" id="formInput1-7" name="">
-                  <option className="bg-gray-500" value="Wrangler">Wrangler</option>
-                  <option className="bg-gray-500" value="4 X 4">4 X 4</option>
-                  <option className="bg-gray-500" value="Wrangler">Wrangler</option>
+                  {vehicles.map((vehicle) => {
+                    console.log(vehicle.name);
+                    <option className="bg-gray-50" value={vehicle.id}>{vehicle.name}</option>
+                  })}
                 </select>
               </div>
             </div>
