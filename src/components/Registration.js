@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../redux/auth/SignUp';
+import fetchedImgSrc from '../images/cover-image.jpg';
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -26,9 +27,8 @@ const Registration = () => {
 
   return (
     <section className="relative bg-white overflow-hidden">
-      <img className="absolute left-0 top-0" src="flaro-assets/images/sign-in/gradient.svg" alt="" />
       <div className="relative z-10 flex flex-wrap -m-8">
-        <div className="w-full md:w-1/2 hidden md:block p-8 bg-no-repeat " />
+        <div className="w-full md:w-1/2 hidden md:block p-8 bg-no-repeat " style={{ backgroundImage: `url(${fetchedImgSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="w-full md:w-1/2 p-8">
           <div className="p-4 py-16 flex flex-col justify-center bg-blueGray-100 h-full">
             <form onSubmit={(e) => handleSubmit(e)} className="md:max-w-lg mx-auto">

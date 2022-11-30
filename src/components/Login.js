@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import fetchedImgSrc from '../images/jeep1.png';
+import fetchedImgSrc from '../images/login-image.jpg';
 import { login } from '../redux/auth/login';
 
 const Login = () => {
@@ -34,10 +34,9 @@ const Login = () => {
   };
 
   return (
-    <section className="relative bg-white overflow-hidden">
-      <img className="absolute left-0 top-0" src="flaro-assets/images/sign-in/gradient.svg" alt="" />
-      <div className="relative z-10 flex flex-wrap -m-8">
-        <div className="w-full md:w-1/2 hidden md:block p-8 bg-no-repeat " style={{ backgroundImage: `url(${fetchedImgSrc})`, backgroundSize: '100% 100%' }} />
+    <section className="relative bg-white overflow-hidden h-screen">
+      <div className="relative z-10 flex flex-wrap h-full">
+        <div className="w-full h-full md:w-1/2 hidden md:block p-8 bg-no-repeat " style={{ backgroundImage: `url(${fetchedImgSrc})`, backgroundSize: 'cover' }} />
         <div className="w-full md:w-1/2 p-8">
           <div className="p-4 py-16 flex flex-col justify-center bg-blueGray-100 h-full">
             <form className="md:max-w-lg mx-auto" onSubmit={(e) => handleSubmit(e)}>
