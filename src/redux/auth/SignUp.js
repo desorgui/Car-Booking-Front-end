@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const signUpUser = createAsyncThunk('SIGN_UP', async (userinfo) => {
-  const response = await fetch('http://127.0.0.1:3000/api/v1/users', {
+  const response = await fetch('https://rails-uccq.onrender.com/api/v1/users', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
