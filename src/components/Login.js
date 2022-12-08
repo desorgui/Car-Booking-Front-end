@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import fetchedImgSrc from '../images/login-image.jpg';
 import { login } from '../redux/auth/login';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const location = useLocation();
 
   const [username, setUser_name] = useState('');
@@ -20,14 +20,14 @@ const Login = () => {
     };
     localStorage.removeItem('user');
     dispatch(login(userInfo));
-    setTimeout(() => {
-      const user = JSON.parse(localStorage.getItem('user'));
-      if (user) {
-        navigate('/vehicles');
-      } else {
-        navigate('/login');
-      }
-    }, 1500);
+    // setTimeout(() => {
+    //   const user = JSON.parse(localStorage.getItem('user'));
+    //   if (user) {
+    //     navigate('/vehicles');
+    //   } else {
+    //     navigate('/login');
+    //   }
+    // }, 1500);
     // if (location.state?.from) {
     //   navigate(location.state.from);
     // }
