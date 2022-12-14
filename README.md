@@ -8,7 +8,7 @@
 ![car-booking](https://user-images.githubusercontent.com/60197357/207634682-592a3c5f-95ac-4c61-8a25-e3cbd66f38eb.png)
 
 
-## [Live Demo Link](https://desorgui-car-booking.netlify.app/)
+## [Live Demo Link](https://desorgui-car-boooking.netlify.app/)
 
 ## [Backend Link](https://github.com/JoffreyNK/final-capstone)
 
