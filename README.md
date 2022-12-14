@@ -10,7 +10,7 @@
 
 ## [Live Demo Link](https://desorgui-car-boooking.netlify.app/)
 
-## [Backend Link](https://github.com/desorgui/final-capstone)
+## [Backend Link](https://github.com/desorgui/car-booking-backend)
 
 
 ## Built With
