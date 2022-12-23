@@ -59,7 +59,7 @@ Ready to work?⛏️ You're all set to explore and change the repo locally (on y
 
 - GitHub: [@desorgui](https://github.com/desorgui)
 - Twitter: [@DGuishny](https://twitter.com/DGuishny)
-- LinkedIn: [Guishny Desor](https://www.linkedin.com/in/guishny-desor-5421a01a9/)
+- LinkedIn: [Guishny Desor](https://www.linkedin.com/in/desorguishny)
 
 ## 🤝 Contributing
 
